@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+						http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+    <bean id="ds"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://localhost:3306/project17?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="ds"/>
+        <property name="typeAliasesPackage" value="questions.model"/>
+    </bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="questions.mapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <bean id="questionMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="questions.mapper.QuestionMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="ds"/>
+    </bean>
+    <bean id="persistService" class="questions.service.PersistService">
+    </bean>
+    <bean id="selectService" class="questions.service.SelectService"></bean>
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="insertPointcut"
+                      expression="target(questions.service.PersistService) and execution(* add*(..))" />
+        <aop:pointcut id="deletePointcut"
+                      expression="target(questions.service.PersistService) and execution(* delete*(..))" />
+        <aop:pointcut id="updatePointcut"
+                      expression="target(questions.service.PersistService) and execution(* set*(..))" />
+        <aop:pointcut id="selectPointcut"
+                      expression="target(questions.service.SelectService) and execution(* get*(..))" />
+        <aop:aspect id="persistAdvisor" ref="persistAdvice">
+            <aop:before method="insertAdvice" pointcut-ref="insertPointcut"/>
+            <aop:around method="insertTotal" pointcut-ref="insertPointcut"/>
+            <aop:after-throwing method="insertFail" pointcut-ref="insertPointcut"/>
+            <aop:after-returning method="insertSuccess" pointcut-ref="insertPointcut"/>
+            <aop:after-throwing method="deleteFail" pointcut-ref="deletePointcut"/>
+            <aop:after-returning method="deleteSuccess" pointcut-ref="deletePointcut"/>
+            <aop:before method="getUpdateId" pointcut-ref="updatePointcut"/>
+        </aop:aspect>
+        <aop:aspect id="selectAdvisor" ref="selectAdvice">
+            <aop:after method="selectAfter" pointcut-ref="selectPointcut"/>
+        </aop:aspect>
+    </aop:config>
+    <bean id="persistAdvice" class="questions.aop.PersistAdvice"/>
+    <bean id="selectAdvice" class="questions.aop.SelectAdvice"/>
+    <bean id="jobMap" class="org.springframework.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="memoryMonitorThread" value-ref="memoryMonitorThread" />
+            </map>
+        </property>
+    </bean>
+    <bean id="memoryMonitorThread" class="questions.thread.MemThread">
+        <property name="name" value="内存监控线程" />
+    </bean>
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须要和Mapper接口名字一致 -->
+<!-- id必须要和Mapper中的方法名一致 -->
+<mapper namespace="questions.mapper.QuestionMapper">
+    <cache eviction="FIFO" flushInterval="10800000" size="512"
+           readOnly="true" />
+    <!--如果需要映射多个参数，则这里parameterType不予赋值，多个参数将按照先后顺序自动编号，从#{0}开始-->
+    <!--如果多个参数里面含有JavaBean，则bean的映射值为该bean在参数中的序号-->
+    <insert id="addQuestion">
+        INSERT INTO questions_all(text,ans1,ans2,ans3,ans4,right_ans,sign,style)
+         VALUES (#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7})
+    </insert>
+    <select id="getQuestionById" parameterType="int" resultType="questions.model.Question">
+        SELECT * FROM questions_all WHERE id=#{id}
+    </select>
+    <select id="getQuestions" resultType="questions.model.Question">
+        SELECT * FROM questions_all
+    </select>
+    <update id="setQuestionText" statementType="CALLABLE">
+        CALL setQuestions(#{0},0,#{1})
+    </update>
+    <update id="setQuestionans" statementType="CALLABLE">
+        CALL setQuestions(#{0},#{1},#{2})
+    </update>
+    <update id="setQuestionRightAns" statementType="CALLABLE">
+        CALL setQuestions(#{0},5,#{1})
+    </update>
+    <update id="setQuestionStyle">
+        UPDATE questions_all SET style=#{1} WHERE id=#{0}
+    </update>
+    <delete id="deleteQuestion">
+        DELETE FROM questions_all WHERE id=#{id}
+    </delete>
+    <insert id="addMemory" parameterType="questions.model.Memory">
+        INSERT INTO memories VALUES (#{maxMemory},#{totalMemory},#{freeMemory})
+    </insert>
+</mapper>

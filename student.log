@@ -1,0 +1,65 @@
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+Before:即将要写入的题目为：
+名字：抗战期间，国民政府是哪一年正式对日宣战的
+A：1931年
+B：1937年
+C：1939年
+D：1941年
+正确答案：d
+唯一标识符：four
+题型号：1
+
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+Around:唯一标识符加密以后：8CBAD96ACED40B3838DD9F07F6EF5772
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+Around:统计时间增强进入
+[INFO] 2018-04-20 03:05:17 [questions.service.PersistService] 
+题目添加成功！
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+After-returning:数据加入成功
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+业务方法:class questions.service.PersistService.addQuestion执行花费了157毫秒
+[INFO] 2018-04-20 03:05:17 [questions.aop.PersistAdvice] 
+Around:统计时间增强结束
+[INFO] 2018-04-20 03:06:31 [questions.aop.PersistAdvice] 
+Before:被修改的题目序号为4号
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+Before:即将要写入的题目为：
+名字：抗战期间，国民政府是哪一年正式对日宣战的
+A：1931年
+B：1937年
+C：1939年
+D：1941年
+正确答案：d
+唯一标识符：four
+题型号：1
+
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+Around:唯一标识符加密以后：8CBAD96ACED40B3838DD9F07F6EF5772
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+Around:统计时间增强进入
+[INFO] 2018-04-20 03:14:09 [questions.service.PersistService] 
+题目添加成功！
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+After-returning:数据加入成功
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+业务方法:class questions.service.PersistService.addQuestion执行花费了217毫秒
+[INFO] 2018-04-20 03:14:09 [questions.aop.PersistAdvice] 
+Around:统计时间增强结束
+[INFO] 2018-04-20 03:47:36 [questions.aop.PersistAdvice] 
+Before:即将要写入的题目为：
+名字：抗战期间，国民政府是哪一年正式对日宣战的
+A：1931年
+B：1937年
+C：1939年
+D：1941年
+正确答案：d
+唯一标识符：four
+题型号：1
+
+[INFO] 2018-04-20 03:47:36 [questions.aop.PersistAdvice] 
+Around:唯一标识符加密以后：8CBAD96ACED40B3838DD9F07F6EF5772
+[INFO] 2018-04-20 03:47:36 [questions.aop.PersistAdvice] 
+Around:统计时间增强进入
+[INFO] 2018-04-20 03:47:36 [questions.aop.PersistAdvice] 
+After-throwing:数据加入失败

@@ -1,0 +1,61 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="untitled17:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/untitled17_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="untitled17/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="untitled17" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/aspectjweaver-1.7.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/com.springsource.org.aopalliance-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-collections4-4.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-lang-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-logging-1.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/FastInoset.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/gmbal-api-only.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/guava-11.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/ha-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.annotation.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-impl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-xjc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxws-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxws-rt.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxws-tools.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-logging-3.1.1.GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jsr181-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-1.2.17.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mail.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/management-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mimepull.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mybatis-3.2.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mybatis-spring-1.2.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysqldriver.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.springframework.test-3.1.0.M2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/policy.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/saaj-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/saaj-impl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-aop-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-aspects-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-beans-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-core-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-context-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-expression-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-jdbc-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-tx-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-web-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/spring-webmvc-4.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/standard.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/stax-ex.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/stax2-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/streambuffer.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/woodstox-core-asl.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
